@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background: #000;
+}
+
+.container {
+
+}
+
+.container::before,
+.container::after {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #111111;
+    transition: transform .25s ease-out;
+}
+
+.container::before {
+    transform: translateY(-100%);
+}
+
+.container::after {
+    transform: translateY(100%);
+}
+
+.container.-hidden::before,
+.container.-hidden::after {
+    transform: translateY(0);
+}
